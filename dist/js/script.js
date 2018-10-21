@@ -14,14 +14,22 @@ $(document).ready(function () {
         $('.menu-toggle').removeClass('active');
     });
 
+    //Banner Parallax
+    $(window).scroll(function () {
+        var wscroll = $(window).scrollTop();
+        $('.banner').css('background-position', 'center ' + (wscroll) * 0.75 + 'px');
+
+    })
+
+
     //active menu switching
     $(window).scroll(function () {
 
         var scrollbarLocation = $(this).scrollTop();
 
         $('nav ul li a').each(function () {
-            var sectionOffset = $(this.hash).offset().top - 550;
-
+            var sectionOffset = $(this.hash).offset().top - 150;
+            console.log(sectionOffset);
             if (sectionOffset <= scrollbarLocation) {
                 $(this).parent().addClass('active-nav');
                 $(this).parent().siblings().removeClass('active-nav');

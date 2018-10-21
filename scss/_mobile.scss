@@ -30,12 +30,12 @@
     }
 
     .open {
-        height: 360px!important ;
+        height: 330px!important ;
         transition: height .5s ease;
     }
 
     .close {
-        height: 85px ;
+        height: 55px ;
         transition: height .5s ease;
     }
    
@@ -52,7 +52,7 @@
                 text-align: center;
                 margin-right: 0;
                 a{
-                    padding: 10px 150px;
+                    padding: 10px 105px;
                     border-radius: 5px;
                     &:hover {
                         background-color: $white-color;

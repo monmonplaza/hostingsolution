@@ -18,20 +18,24 @@ header {
     position: fixed;
     z-index: 99999;
     @include media-query(900px) {
-        height: 100px;
+        height: 55px;
     }
     .branding img{
         transition: all .5s ease;
         width: 100%;
+        @include media-query(420px) {
+            width: 40%!important;
+        }
         @include media-query(900px) {
             width: 50%;
         }
+
     }
     .menu-toggle {
         display: none;
         position: absolute;
-        right: 40px;
-        top:  40px;
+        right: 20px;
+        top:  20px;
 
         div {
             width: 35px;
@@ -86,7 +90,9 @@ header.shrink img {
     @include media-query(900px) {
         width: 50%;
     }
-   
+    @include media-query(420px) {
+        width: 40%!important;
+    }
 }
 
 header.shrink nav  {
@@ -95,19 +101,21 @@ header.shrink nav  {
 }
 
 header.shrink {
-    height: 50px;
+    height: 55px;
     transition: all .5s ease;
     @include media-query(900px) {
-        height: 100px;
+        height: 55px;
     }
+   
 }
 
 .banner {
     position: relative;
     background: url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
     background: {
-        position: center;
+        repeat:no-repeat;
         size: cover;
+        
     }
     height: 600px;
     &:before {
@@ -218,8 +226,8 @@ header.shrink {
 .author-info {
     background-color: $gray-color;
     .author-content {
-        padding-top: 35px;
-        padding-bottom: 35px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     position: relative;
     padding-left: 16%;
     min-height: 590px;
@@ -309,7 +317,6 @@ header.shrink {
                 transition: .5s ease;
                 &:hover {
                     cursor: pointer;
-                    text-decoration: underline;
                 }   
                 i {
                     float: left;
@@ -319,7 +326,10 @@ header.shrink {
             }   
         }
     }
-    
+}
+
+.question.active {
+    color:$red-color;
 }
 
 
