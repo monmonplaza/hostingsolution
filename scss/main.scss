@@ -8,6 +8,8 @@
 @import 'mobile';
 
   
+
+
 header {
     @include clearfix;
     background-color: $red-color;
@@ -23,9 +25,9 @@ header {
     .branding img{
         transition: all .5s ease;
         width: 100%;
-        @include media-query(420px) {
-            width: 50%!important;
-        }
+        // @include media-query(414px) {
+        //     width: 150px!important;
+        // }
         @include media-query(900px) {
             width: 150px;
         }
@@ -111,13 +113,13 @@ header.shrink {
 
 .banner {
     position: relative;
-    background: url('https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+    background: url('../images/banner.jpg');
     background: {
         repeat:no-repeat;
         size: cover;
         
     }
-    height: 600px;
+    min-height: 700px;
     &:before {
         content: '';
         position: absolute;
@@ -125,7 +127,7 @@ header.shrink {
         left:0;
         background-color:  rgba(0,0,0,.5);
         z-index: 1;
-        height: 600px;
+        height: 700px;
         width: 100%;
     } 
     .type-effect{
@@ -145,28 +147,84 @@ header.shrink {
 
     .banner-content {
         position: absolute;
-        top: 40%;
+        top: 30%;
         color:$white-color;
         z-index: 2;
-        h1 {
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            font-weight: lighter;
-            letter-spacing: 5px;
+        @include media-query(414px){
+            top: 17%;
         }
-        h2{
-            font-size: 3rem;
-            width: 680px;
-            font-weight: 500;
-            line-height: 45px;
-            @include media-query(700px){
-                font-size: 2.3rem;
-                width: 100%;
+        @include media-query(380px){
+            top: 140px;
+        }
+        .banner-text-wrapper {
+            margin-top: 50px;
+            margin-bottom: 20px;
+            @include media-query(360px){
+                margin-top: -50px;
+                margin-bottom: 50px;
             }
-            span {
+            h1 {
+                font-size: 1.2rem;
                 text-transform: uppercase;
-                font-weight: bold;
-                color: $red-color;
+                font-weight: lighter;
+                letter-spacing: 5px;
+            }
+            h2{
+                font-size: 3rem;
+                width: 680px;
+                font-weight: 500;
+                line-height: 45px;
+                @include media-query(1024px){
+                    font-size: 2.3rem;
+                    width: 100%;
+                }
+                @include media-query(700px){
+                    font-size: 2rem;
+                }
+                span {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    color: $red-color;
+                }
+            }
+        }
+        
+        .banner-form-wrapper {
+            width: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            margin-left: 150px;
+            padding: 20px 15px;
+            border-radius: 5px;
+
+            @include media-query(1025px){
+                margin-left: 50px;
+            } 
+            
+            
+             
+
+            @include media-query(375px){
+                width: 95%;
+                margin-left: 0px;
+            } 
+            h3 {
+                padding-bottom: 10px;
+                color:#fff;
+                text-align: center;
+            }
+            form {
+                input {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    padding: 5px;
+                    border:none;
+                }
+                button {
+                    background-color: $red-color;
+                    color: #fff;
+                    padding: 8px 13px;
+                    border: none;
+                }
             }
         }
     }
@@ -254,16 +312,13 @@ header.shrink {
             border-left: 100px solid $gray-color;
             border-bottom: 700px solid transparent;
             z-index: 3;
-            @include media-query-min(1367px) {
-                border-bottom: 605px solid transparent;
-            }
-
+          
             @include media-query(1367px) {
-                border-bottom: 600px solid transparent;
+                border-bottom: 635px solid transparent;
             }
 
             @include media-query(1025px) {
-                border-bottom: 665px solid transparent;
+                border-bottom: 735px solid transparent;
             }
             @include media-query(900px) {
                 display: none;
@@ -275,9 +330,9 @@ header.shrink {
         background: url('../images/author_info.jpeg');
         background-position:center;
         background-size: cover;
-        min-height: 600px;
+        min-height: 635px;
         @include media-query(1025px) {
-            min-height: 675px;
+            min-height: 735px;
         }
     }
 }
@@ -313,13 +368,13 @@ header.shrink {
             padding: 10px 0;
             .question {
                 padding-bottom: 10px; 
-                display: block;
+                display: flex;
                 transition: .5s ease;
                 &:hover {
                     cursor: pointer;
                 }   
                 i {
-                    float: left;
+                    // float: left;
                     padding-right: 10px;
                     display: inline-block;
                 }
@@ -387,6 +442,15 @@ footer {
             a {
                 color: $white-color;
             }
+        }
+    }
+
+    .contact-info  {
+        color: #fff;
+        li {
+            display: inline-block;
+            margin-bottom: 5px;
+            font-size: 14px;
         }
     }
 
